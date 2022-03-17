@@ -70,3 +70,78 @@ Let's turn it into an NFA:
 And now let's test it!
 
 ![Testing the Regex](img/testing_regex.png)
+
+
+## Visualization script
+
+#### 1. Regex to NFA
+
+Now, let's check out the visualization script that is already given to you in the repository. But for this, you will need to implement the algorithm to convert regex to nfa (don't worry if they are not right, they just need to compile).
+
+If you look at the root directory of your project 3, you will find a script `./viz.sh` file that we will run now. 
+
+Navigate to your root directory in the terminal.
+
+Now, run this command: `env OCAMLPATH=dep dune exec bin/viz.bc`. You can also run `./viz.sh` but you will get a `permission denied` error. Run `chmod +x ./viz.sh` and now you should be able to run `./viz.sh`.
+
+![Permission Denied](img/perm-denied.png)
+
+It should look something like this.
+
+![Running viz](img/run_viz.png)
+
+This should prompt you to enter a regex. Enter the regex with the operation you are testing your algorithm for. For the first example, I will the following simple regex.
+
+`a|b`
+
+![Entering the regex](img/entering-regex.png)
+
+Now, it should prompt you to confirm if you want to convert your nfa to dfa. Enter `n`. When it is done, it will create an image under the name `output.png` in the project's root directory.
+
+**Union:**
+![Done](img/nfa_done.png)
+
+Check your `output.png` and it should have the nfa your algorithm produced. If your algorithm is right, you should see the nfa something like the following. 
+
+![Output](img/nfa_output.png)
+
+If it does not, you can visually inspect what is wrong, e.g. missing or additional transitions, states, or wrong final states, etc.
+
+You can try out different regex to check your algorithm.
+
+**Concatenation:**
+![Concatenation](img/nfa_concat.png)
+![Concatenation Output](img/nfa_concat_output.png)
+
+**Star:**
+![Star](img/nfa_star.png)
+![Star Output](img/nfa_star_output.png)
+
+#### 2. NFA to DFA
+
+Now that we have seen how we can rectify our algorithm for `Regex to NFA`, let's look at how we can do the same for `NFA to DFA`.
+
+Steps for this are no different except at the second step. As you guessed it, you now have to enter `y` instead of `n` when asked `Convert to DFA?`. Since we are running the same script, we will get the output in the same directory under the same name. Here is an example:
+
+**Corresponding NFA:**
+
+![NFA to DFA: NFA](img/nfa_to_dfa_nfa.png)
+![NFA to DFA: NFA Output](img/nfa_to_dfa_nfa_output.png)
+
+**Corresponding DFA:**
+
+![NFA to DFA: DFA](img/nfa_to_dfa_dfa.png)
+![NFA to DFA: DFA Output](img/nfa_to_dfa_dfa_output.png)
+
+Wait wait wait! Don't panic yet by the output of your NFA to DFA algorithm. It will look horrible. That is because of the dead state. If you ignore the dead state and all of the transitions leading to thedead state, you will get a cleaner DFA. Now, if your algorithm is buggy, you should see something wrong with your DFA and it should easier to debug with the image.
+
+---
+
+#### Pro Tip:
+When checking NFA to DFA, always make sure first that your algorithm is producing the correct NFA. Incorrect NFA will lead to incorrect dfa conversion.
+
+---
+
+That is all you need for project 3. Godspeed!
+
+`Made with ❤️ by Guido and Jay!`
