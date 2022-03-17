@@ -21,17 +21,17 @@ The reason why is because the Sets module is not simply available from the top l
 
 Thus, instead of opening Sets, try opening "P3", like so:
 
-![Opening P3](img/open_p3)
+![Opening P3](img/open_p3.png)
 
 You'll notice you'll get no errors, and we can actually see what's available under P3, like so:
 
-![What's Available in P3](img/whats_available_p3)
+![What's Available in P3](img/whats_available_p3.png)
 
 Aha! There it is. Notice that you have access to the Nfa, Regexp and Sets module via P3. **However**, the Nfa and Regexp where already "opened" when you loaded our src when calling ```dune utop src```, which means that we don't need to preface their calls in any way. Further as we look at some examples we'll see different ways to call them.
 
 In the case of the Sets module however, we must preface it with Sets.something in order to use its functions, like so:
 
-![Sets Examples](img/sets_example)
+![Sets Examples](img/sets_example.png)
 
 We encourage you to try the different functions available in the sets.ml file to get a sense for how they work and where you might use them.
 
@@ -39,34 +39,34 @@ We encourage you to try the different functions available in the sets.ml file to
 
 Now let's look at some examples of how you might want to interactively test your code. First, I'll make an nfa example record we'll use. I'll use the same one from the project README, which is this one:
 
-![Nfa Pic](img/nfa_drawn)
+![Nfa Pic](img/nfa_drawn.png)
 
 Now, let's actually write it out:
 
-![Making the NFA](img/making_the_nfa)
+![Making the NFA](img/making_the_nfa.png)
 
 Now let's run e-closure on it:
 
-![E-Closure on NFA](img/eclosure_example)
+![E-Closure on NFA](img/eclosure_example.png)
 
 Now other functions:
 
-![Other functions on NFA](img/new_stuff_examples)
+![Other functions on NFA](img/new_stuff_examples.png)
 
 Now let's convert it to a DFA!
 
-![Converting to DFA](img/converting_to_dfa)
+![Converting to DFA](img/converting_to_dfa.png)
 
 ## Regex Portion
 
 Now that should have given you a sense of how you can interactively make examples and test your code. Let's look at how you'd do this with the regex module as well. Let's create a regex:
 
-![Creating the Regex](img/creating_regex)
+![Creating the Regex](img/creating_regex.png)
 
 Let's turn it into an NFA:
 
-![Regex to NFA](img/regex_to_nfa)
+![Regex to NFA](img/regex_to_nfa.png)
 
 And now let's test it!
 
-![Testing the Regex](testing_regex)
+![Testing the Regex](testing_regex.png)
